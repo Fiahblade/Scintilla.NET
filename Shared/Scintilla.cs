@@ -52,7 +52,8 @@ namespace ScintillaNET
             var platform = (IntPtr.Size == 4 ? "x86" : "x64");
             var assembly = Assembly.GetExecutingAssembly();
             var managedLocation = Path.GetDirectoryName(assembly.Location) ?? AppDomain.CurrentDomain.BaseDirectory;
-            var basePath = Path.Combine(managedLocation, platform);
+            var basePath = Path.Combine(managedLocation, "resources", "scintilla", platform);
+
             // Directory exists when application is built with .NET or .NETFramework at runtime
             if (Directory.Exists(basePath))
             {
